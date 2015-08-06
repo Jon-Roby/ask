@@ -1,5 +1,15 @@
 <template name="questionPage">
   <div class="question-page page">
     {{> questionItem}}
+    <ul class="comments">
+      {{#each comments}}
+        {{> commentItem}}
+      {{/each}}
+    </ul>
+    {{#if currentUser}}
+      {{>commentSubmit}}
+    {{else}}
+      <p>Please log in to to leave a comment.</p>
+    {{/if}}
   </div>
 </template>
