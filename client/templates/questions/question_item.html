@@ -2,7 +2,12 @@
   <div class="question">
     <div class="question-content">
       <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
+      <p>
+        submitted by {{author}}
+        {{#if ownQuestion}}<a href="{{pathFor 'questionEdit'}}">Edit</a>{{/if}}
+      </p>
     </div>
+    <h4>{{question}}</h4>
     <a href="{{pathFor 'questionPage'}}" class="discuss btn btn-default">Discuss</a>
   </div>
 </template>

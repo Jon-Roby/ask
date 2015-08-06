@@ -1,0 +1,22 @@
+<template name="questionEdit">
+  <form class="main form page">
+
+    <div class="form-group">
+      <label class="control-label" for="title">Title</label>
+      <div class="controls">
+          <input name="title" id="title" type="text" value="{{title}}" placeholder="Title of Question" class="form-control"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="question">Question</label>
+      <div class="controls">
+        <textarea name="question" class="form-control" value="{{question}}" placeholder="Your Question" rows="3"></textarea>
+      </div>
+    </div>
+
+    <input type="submit" value="Submit" class="btn btn-primary"/>
+    <hr/>
+    <a class="btn btn-danger delete" href="#">Delete question</a>
+  </form>
+</template>
