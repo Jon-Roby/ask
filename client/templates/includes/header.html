@@ -2,17 +2,23 @@
   <nav class="navbar navbar-default" role="navigation">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
-        <span class="sr-only">Toggle Navigation</span>
+        <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{pathFor 'questionsList'}}">Ask</a>
+      <a class="navbar-brand" href="{{pathFor 'home'}}">Ask</a>
     </div>
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
+        <li class="{{activeRouteClass 'home' 'newQuestions'}}">
+          <a href="{{pathFor 'newQuestions'}}">New</a>
+        </li>
+        <li class="{{activeRouteClass  'bestQuestions'}}">
+          <a href="{{pathFor 'bestQuestions'}}">Best</a>
+        </li>
         {{#if currentUser}}
-          <li>
+          <li class="{{activeRouteClass 'questionSubmit'}}">
             <a href="{{pathFor 'questionSubmit'}}">Submit Question</a>
           </li>
           <li class="dropdown">

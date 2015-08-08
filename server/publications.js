@@ -6,14 +6,16 @@ Meteor.publish('questions', function(options) {
   return Questions.find({}, options);
 });
 
+
+
+Meteor.publish('singleQuestion', function(id) {
+  check(id, String)
+  return Questions.find(id);
+});
+
 Meteor.publish('comments', function(questionId) {
   check(questionId, String);
   return Comments.find({questionId: questionId});
-});
-
-Meteor.publish('singleQuestions', function(id) {
-  check(id, String)
-  return Questions.find(id);
 });
 
 Meteor.publish('notifications', function() {

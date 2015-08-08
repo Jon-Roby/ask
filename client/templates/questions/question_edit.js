@@ -43,7 +43,7 @@ Template.questionEdit.events({
     if (confirm("Delete this post?")) {
       var currentQuestionId = this._id;
       Questions.remove(currentQuestionId);
-      Router.go('questionsList');
+      Router.go('home');
     }
   }
 });

@@ -21,7 +21,9 @@ if (Questions.find().count() === 0) {
     author: jon.profile.name,
     question: 'What does this symbol ~ mean?',
     submitted: new Date(now - 7 * 3600 * 1000),
-    commentsCount: 2
+    commentsCount: 2,
+    upvoters: [],
+    votes: 0
   });
 
   Comments.insert({
@@ -44,13 +46,17 @@ if (Questions.find().count() === 0) {
   Questions.insert({
     title: 'Meteor',
     question: 'http://meteor.com',
-    commentsCount: 0
+    commentsCount: 0,
+    upvoters: [],
+    votes: 0
   });
 
   Questions.insert({
     title: 'The Meteor Book',
     question: 'http://themeteorbook.com',
-    commentsCount: 0
+    commentsCount: 0,
+    upvoters: [],
+    votes: 0
   });
 
   for (var i = 0; i < 10; i++) {
@@ -60,7 +66,9 @@ if (Questions.find().count() === 0) {
       userId: matthew._id,
       question: "Question body" + i,
       submitted: new Date(now - i * 3600 * 1000),
-      commentsCount: 0
+      commentsCount: 0,
+      upvoters: [],
+      votes: 0
     });
   }
 }
