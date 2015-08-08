@@ -52,4 +52,15 @@ if (Questions.find().count() === 0) {
     question: 'http://themeteorbook.com',
     commentsCount: 0
   });
+
+  for (var i = 0; i < 10; i++) {
+    Questions.insert({
+      title: 'Test question #' + i,
+      author: matthew.profile.name,
+      userId: matthew._id,
+      question: "Question body" + i,
+      submitted: new Date(now - i * 3600 * 1000),
+      commentsCount: 0
+    });
+  }
 }
